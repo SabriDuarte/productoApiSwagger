@@ -1,0 +1,47 @@
+Info:
+app:
+  encoding: '@project.build.sourceEncoding@'
+  java:
+    source: '@java.version@'
+    target: '@java.version@'
+  version: '@project.version@'
+  name: '@project.name@'
+
+spring:
+  application:
+    name: '@project.name@'
+  main:
+    banner-mode: 'CONSOLE'
+  datasource:
+    url: jdbc:mysql://localhost:3306/testdb
+    username: santo_domingo
+    password: password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    initialization-mode: always
+  jpa:
+    show-sql: true
+    open-in-view: false
+    hibernate:
+    ddl-auto: update
+  sql:
+    init:
+      mode: always
+      platform: mysql
+      schema-locations: classpath:schema.sql
+      data-locations: classpath:data.sql
+
+doc:
+  swagger-ui:
+    path: /swagger-ui/index.html
+    enabled: true
+
+server:
+  port: 8089
+  compression:
+  nabled: true
+
+user:
+  timezone: 'UTC'
+
+logging:
+  config: classpath:log4j2.xml
